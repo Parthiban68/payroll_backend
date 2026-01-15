@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ES2020",
+    "strict": true,
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["*"],
+      "@common": ["common/index.ts", "./common"],
+      "@common/*": ["common/*"],
+      "@core": ["core/index.ts", "./core"],
+      "@core/*": ["core/*"]
+    },
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
