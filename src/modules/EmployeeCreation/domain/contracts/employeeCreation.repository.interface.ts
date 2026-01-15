@@ -5,4 +5,6 @@ export interface IEmployeeCreationRepository {
   findEmail(email: string): any;
   employeeLoginCreation(data: any): any;
   findEmployeeLoginDetails(email: string): any;
+  getAllEmployeeDetails(): any;
+  getEmployeeDetailsById(emp_id: string): any;
 }

@@ -46,4 +46,12 @@ export class employeeCreationService {
 
     return;
   }
+
+  async getEmployee() {
+    return await this.repo.getAllEmployeeDetails();
+  }
+
+  async getEmployeeById(emp_id: string) {
+    return await this.repo.getEmployeeDetailsById(emp_id);
+  }
 }

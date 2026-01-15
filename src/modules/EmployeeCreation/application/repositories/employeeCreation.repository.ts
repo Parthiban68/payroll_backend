@@ -107,4 +107,20 @@ export class employeeRespository implements IEmployeeCreationRepository {
   private async findEmployeeLoginDetailsExsits(email: string) {
     return await this.loginModel.find({ email });
   }
+
+  public getAllEmployeeDetails() {
+    return this.getAllEmployee();
+  }
+
+  private async getAllEmployee() {
+    return await this.employeeModel.find();
+  }
+
+  public getEmployeeDetailsById(emp_id: string) {
+    return this.getEmployeeById(emp_id);
+  }
+
+  private async getEmployeeById(emp_id: string) {
+    return await this.employeeModel.findById(emp_id);
+  }
 }
