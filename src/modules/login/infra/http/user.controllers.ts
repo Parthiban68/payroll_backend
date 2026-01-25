@@ -3,6 +3,7 @@ import { userRepository } from "../../application/repositories/user.repository";
 import { userService } from "../../application/service/user.services";
 import lib from "@/lib";
 import { envConfig } from "@/config/env.config";
+import { AuthenticatedRequest } from "@/common/middleware/auth.middleware";
 
 class userController {
   private readonly service: userService;
@@ -11,7 +12,7 @@ class userController {
     this.service = new userService(
       useRepo,
       lib.jwtServiceInstance,
-      lib.mailServiceInstance
+      lib.mailServiceInstance,
     );
     this.userRegister = this.userRegister.bind(this);
     this.userLogin = this.userLogin.bind(this);
@@ -62,12 +63,23 @@ class userController {
       });
 
       return res.status(200).json({
-        success : true,
+        success: true,
         message: "Logged out successfully",
       });
     } catch (error) {
       next(error);
     }
+  }
+
+  async authMe(req: AuthenticatedRequest, res: Response, next: NextFunction) {
+    return res.json({
+      success: true,
+      result: {
+        name: req.user?.name,
+        email: req.user?.email,
+        role: req.user?.role,
+      },
+    });
   }
 }
 

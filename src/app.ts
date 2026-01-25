@@ -14,14 +14,14 @@ const app = express();
 
 if (envConfig.server.enviroment === "production") {
   app.use(cors());
+} else {
+  app.use(
+    cors({
+      origin: "http://localhost:5173",
+      credentials: true,
+    }),
+  );
 }
-
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  })
-);
 
 app.use(express.json());
 
