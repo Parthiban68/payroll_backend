@@ -1,5 +1,5 @@
 import { Router } from "express";
-import userRouter from "./login/infra/http/user.route";
+import userRouter from "./auth/infra/http/user.route";
 import employeeCreationRouter from "./EmployeeCreation/infra/http/employeeCreation.route";
 const apiRouter = Router();
 

@@ -7,7 +7,7 @@ const employeeCreationRouter = Router();
 
 employeeCreationRouter.post(
   "/creation",
-  common.validate(CreateEmployeeDtoSchema),
+  common.commonMiddleware(CreateEmployeeDtoSchema),
   employeeCreationControllers.employeeCreation
 );
 
