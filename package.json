@@ -4,15 +4,14 @@
   "description": "",
   "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development tsx watch --env-file .env.development src/server.ts",
-    "prod": "cross-env NODE_ENV=production tsx watch --env-file .env.production src/server.ts",
-    "build": "tsc && tsc-alias"
+    "dev": "tsx watch --env-file .env.development src/server.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
