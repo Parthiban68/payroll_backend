@@ -9,6 +9,7 @@ class employeeCreationController {
     const repo = new employeeRespository();
     this.service = new employeeCreationService(repo);
     this.employeeCreation = this.employeeCreation.bind(this);
+    this.getAllEmployees = this.employeeCreation.bind(this);
   }
 
   async employeeCreation(req: Request, res: Response, next: NextFunction) {

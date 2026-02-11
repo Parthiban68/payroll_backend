@@ -7,8 +7,13 @@ const employeeCreationRouter = Router();
 
 employeeCreationRouter.post(
   "/creation",
-  common.commonMiddleware(CreateEmployeeDtoSchema),
-  employeeCreationControllers.employeeCreation
+  // common.commonMiddleware(CreateEmployeeDtoSchema),
+  employeeCreationControllers.employeeCreation,
+);
+
+employeeCreationRouter.get(
+  "/getall",
+  employeeCreationControllers.getAllEmployees,
 );
 
 export default employeeCreationRouter;
